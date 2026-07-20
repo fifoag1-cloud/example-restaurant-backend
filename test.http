@@ -1,0 +1,9 @@
+POST http://localhost:8080/api/reservations
+Content-Type: application/json
+
+{
+  "name": "John",
+  "date": "2026-07-20",
+  "time": "19:00",
+  "guests": 4
+}
