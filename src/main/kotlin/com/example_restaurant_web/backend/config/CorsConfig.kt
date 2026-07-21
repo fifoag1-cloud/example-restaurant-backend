@@ -20,6 +20,7 @@ class CorsConfig : WebMvcConfigurer {
                 "GET",
                 "POST",
                 "PUT",
+                "PATCH",
                 "DELETE"
             )
     }
