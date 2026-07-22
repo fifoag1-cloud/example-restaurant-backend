@@ -18,7 +18,7 @@ class CategoryController(
 
     @GetMapping("/top-level")
     fun getTopLevelCategories(): List<CategoryEntity> {
-        return categoryRepository.findByParentIsNullOrderBySortOrder()
+        return categoryRepository.findByParentIdIsNullOrderBySortOrder()
     }
 
     @GetMapping("/{id}/subcategories")
@@ -38,7 +38,7 @@ class CategoryController(
             val item = existing.get()
             item.name = updated.name
             item.sortOrder = updated.sortOrder
-            item.parent = updated.parent
+            item.parentId = updated.parentId
             ResponseEntity.ok(categoryRepository.save(item))
         } else {
             ResponseEntity.notFound().build()
