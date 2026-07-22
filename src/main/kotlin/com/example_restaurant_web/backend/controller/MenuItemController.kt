@@ -31,6 +31,11 @@ class MenuItemController(
         return menuItemRepository.findAll().filter { it.featured }
     }
 
+    @GetMapping("/category/{categoryId}")
+    fun getMenuItemsByCategory(@PathVariable categoryId: Long): List<MenuItemEntity> {
+        return menuItemRepository.findAll().filter { it.categoryId == categoryId }
+    }
+
     @PostMapping
     fun createMenuItem(@RequestBody menuItem: MenuItemEntity): MenuItemEntity {
         return menuItemRepository.save(menuItem)
@@ -46,6 +51,8 @@ class MenuItemController(
             item.price = updatedItem.price
             item.imageUrl = updatedItem.imageUrl
             item.featured = updatedItem.featured
+            item.categoryId = updatedItem.categoryId
+            item.subcategoryId = updatedItem.subcategoryId
             ResponseEntity.ok(menuItemRepository.save(item))
         } else {
             ResponseEntity.notFound().build()
