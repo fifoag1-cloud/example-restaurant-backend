@@ -9,12 +9,13 @@ data class MenuItemEntity(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
     @Column(nullable = false)
-    var name: String,
+    var name: String = "",
     @Column(length = 500)
     var description: String = "",
     @Column(nullable = false)
     var price: Double = 0.0,
     var imageUrl: String = "",
+    @Column(name = "shown_in_menu")
     var shownInMenu: Boolean = true,
     var featured: Boolean = false,
     @Column(name = "category_id")
