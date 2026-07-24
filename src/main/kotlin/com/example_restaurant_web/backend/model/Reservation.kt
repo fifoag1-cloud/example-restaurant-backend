@@ -4,7 +4,9 @@ data class Reservation(
     val name: String,
     val date: String,
     val time: String,
-    val guests: Int
+    val guests: Int,
+    val phone: String?,
+    val specialRequest: String?
 ) {
     fun isValid(): Boolean {
         return name.isNotBlank() &&

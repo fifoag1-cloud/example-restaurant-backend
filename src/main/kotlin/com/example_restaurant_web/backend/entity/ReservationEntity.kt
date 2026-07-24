@@ -12,5 +12,7 @@ data class ReservationEntity(
     var date: String,
     var time: String,
     var guests: Int,
-    var status: String = "PENDING"
+    var status: String = "PENDING",
+    var phone: String? = null,
+    var specialRequest: String? = null,
 )

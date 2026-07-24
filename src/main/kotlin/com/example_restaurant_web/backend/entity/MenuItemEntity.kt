@@ -15,6 +15,7 @@ data class MenuItemEntity(
     @Column(nullable = false)
     var price: Double = 0.0,
     var imageUrl: String = "",
+    var shownInMenu: Boolean = true,
     var featured: Boolean = false,
     @Column(name = "category_id")
     var categoryId: Long? = null,

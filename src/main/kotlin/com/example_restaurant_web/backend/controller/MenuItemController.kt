@@ -50,6 +50,7 @@ class MenuItemController(
             item.description = updatedItem.description
             item.price = updatedItem.price
             item.imageUrl = updatedItem.imageUrl
+            item.shownInMenu = updatedItem.shownInMenu
             item.featured = updatedItem.featured
             item.categoryId = updatedItem.categoryId
             item.subcategoryId = updatedItem.subcategoryId

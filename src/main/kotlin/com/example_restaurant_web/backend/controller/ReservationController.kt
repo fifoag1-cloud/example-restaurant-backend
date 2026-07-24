@@ -30,7 +30,9 @@ class ReservationController(private val reservationRepository: ReservationReposi
             date = reservation.date,
             time = reservation.time,
             guests = reservation.guests,
-            status = "PENDING"
+            status = "PENDING",
+            phone = reservation.phone,
+            specialRequest = reservation.specialRequest
         )
 
         reservationRepository.save(savedReservation)
@@ -54,6 +56,8 @@ class ReservationController(private val reservationRepository: ReservationReposi
         entity.date = reservation.date
         entity.time = reservation.time
         entity.guests = reservation.guests
+        entity.phone = reservation.phone
+        entity.specialRequest = reservation.specialRequest
 
         reservationRepository.save(entity)
 
